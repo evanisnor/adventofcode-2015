@@ -1,0 +1,26 @@
+{
+  "name": "adventofcode-2015",
+  "version": "0.0.0",
+  "description": "Solutions to adventofcode 2015",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/evanisnor/adventofcode-2015"
+  },
+  "keywords": [
+    "adventofcode",
+    "javascript"
+  ],
+  "author": "Evan W. Isnor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evanisnor/adventofcode-2015/issues"
+  },
+  "homepage": "https://github.com/evanisnor/adventofcode-2015",
+  "dependencies": {
+    "blueimp-md5": "~1.1.1"
+  }
+}
