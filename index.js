@@ -14,7 +14,7 @@ var run = function (day) {
 }
 
 var runAll = function () {
-  for (var d = 1; d <= 4; d++) {
+  for (var d = 1; d <= 6; d++) {
     run(d);
   }
 }
