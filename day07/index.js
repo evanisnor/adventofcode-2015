@@ -21,7 +21,7 @@ var parseInstruction = function (string) {
     if (operationMatches[2]) {
       operation.left = {
         isWire: false,
-        value: parseInt(operationMatches[2])
+        value: parseInt(operationMatches[2]) & 0xFFFF
       };
     } else {
       operation.left = {
@@ -33,7 +33,7 @@ var parseInstruction = function (string) {
     if (operationMatches[5]) {
       operation.right = {
         isWire: false,
-        value: parseInt(operationMatches[5])
+        value: parseInt(operationMatches[5]) & 0xFFFF
       };
     } else {
       operation.right = {
@@ -49,7 +49,7 @@ var parseInstruction = function (string) {
       return [wireId, {
         type: 'NOT',
         isWire: false,
-        value: parseInt(notMatches[3])
+        value: parseInt(notMatches[3]) & 0xFFFF
       }];
     } else {
       return [wireId, {
@@ -64,7 +64,7 @@ var parseInstruction = function (string) {
       return [wireId, {
         type: 'SET',
         isWire: false,
-        value: parseInt(setMatches[2])
+        value: parseInt(setMatches[2]) & 0xFFFF
       }];
     } else {
       return [wireId, {
@@ -130,8 +130,8 @@ var trace = function (wireId, circuitBoard, memory) {
       }
       break;
   }
-  memory[wireId] = value;
-  return value;
+  memory[wireId] = value & 0xFFFF;
+  return memory[wireId];
 }
 
 var renderCircuitBoard = function (instructions) {
@@ -170,7 +170,7 @@ exports.run = function () {
   console.log("First signal value for wire a:", result['a']);
 
   setWireValue('b', result['a'], circuitBoard);
-  
+
   result = executeCircuit(circuitBoard);
   console.log("Second signal value for wire a:", result['a']);
 
