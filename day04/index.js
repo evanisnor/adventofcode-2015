@@ -24,8 +24,6 @@ exports.mine = function (secretKey, leadingZeros) {
 
 exports.run = function () {
   var secretKey = readInput(__dirname);
-
-  console.log('Mining for ' + secretKey +' to 5 leading zeroes. This may take a while... ');
   console.log('Advent Coin mining:', exports.mine(secretKey, 5));
 
   console.log('Mining for ' + secretKey +' to 6 leading zeroes. This may take a while... ');
